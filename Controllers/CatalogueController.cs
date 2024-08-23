@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Bookish.Models;
 using System.Text.Encodings.Web;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Bookish.Controllers;
 
@@ -19,6 +20,9 @@ public class CatalogueController : Controller
     public IActionResult BookDetails(int id = 1, string book = "True and Me")
     {
         // return HtmlEncoder.Default.Encode($"Show the details for the book {book} of id {id}");
+
+        ViewData["id"] = "Id: " + id;
+        ViewData["book"] = "Title: " + book;
 
         return View();
     }
