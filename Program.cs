@@ -9,7 +9,8 @@ using (var context = new BookishDbContext())
 {
 
     //creates db if not exists 
-    context.Database.EnsureCreated();
+    //I don't need this because I'm using migrations
+    // context.Database.EnsureCreated();
 
     //create entity objects
     if (!context.Books.Any())
@@ -31,10 +32,10 @@ using (var context = new BookishDbContext())
         //save data to the database tables
         context.SaveChanges();
 
-        //retrieve all the books from the database
+        // retrieve all the books from the database
         foreach (var b in context.Books)
         {
-            Console.WriteLine($"Title: {b.Title}, Author: {b.Author}");
+            Console.WriteLine($"Title: {b.Title}, Author: {b.Author.AuthorName}");
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Bookish
     {
         //entities from domain classes
         public DbSet<Book> Books { get; set; }
-        public DbSet<Author> Authors { get; set; }
+        // public DbSet<Author> Authors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

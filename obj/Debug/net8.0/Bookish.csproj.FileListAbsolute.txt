@@ -102,3 +102,4 @@ c:\Training\w7d1_Bookish\Bookish\obj\Debug\net8.0\Bookish.genruntimeconfig.cache
 c:\Training\w7d1_Bookish\Bookish\obj\Debug\net8.0\ref\Bookish.dll
 C:\Training\w7d1_Bookish\Bookish\bin\Debug\net8.0\Npgsql.dll
 C:\Training\w7d1_Bookish\Bookish\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Training\w7d1_Bookish\Bookish\obj\Debug\net8.0\Bookish.sourcelink.json
