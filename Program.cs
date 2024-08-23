@@ -12,7 +12,7 @@ using (var context = new BookishDbContext())
     //I don't need this because I'm using migrations
     // context.Database.EnsureCreated();
 
-    //create entity objects
+    //create entity objects when running Program.cs (if there are none)
     if (!context.Books.Any())
     {
         var author1 = new Author() { AuthorName = "Alen Timofeyev" };
