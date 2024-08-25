@@ -1,10 +1,44 @@
+@model IEnumerable<Book>
+
 @{
     ViewData["Title"] = "Book List";
 }
 
 <div class="text-center">
     <h1 class="display-4">Our Book Catalogue</h1>
-    <ul>
-        <li></li>
-    </ul>
 </div>
+
+@* @foreach (var book in Model) {
+    <p>Title: @book.Title, Author: @book.AuthorId, Available copies: @book.Copies</p>
+} *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copies)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Copies)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

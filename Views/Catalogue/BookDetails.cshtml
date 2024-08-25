@@ -1,3 +1,5 @@
+@model Book
+
 @{
     ViewData["Title"] = "Book Details";
 }
@@ -6,6 +8,29 @@
     <h1 class="display-4">Book Details</h1>
 </div>
 
-<ul>
-    <li>@ViewData["id"]) @ViewData["book"]</li>
-</ul>
+@* <ul>
+    <li>@Model.Title (@Model.AuthorId)</li>
+</ul> *@
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Copies)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Copies)
+        </dd>
+        @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Author.AuthorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Author.AuthorName)
+        </dd> *@
+    </dl>
+</div>

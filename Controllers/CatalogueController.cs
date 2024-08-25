@@ -3,28 +3,42 @@ using Microsoft.AspNetCore.Mvc;
 using Bookish.Models;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookish.Controllers;
 
 public class CatalogueController : Controller
 {
-    
+
+    private readonly BookishDbContext _context;
+
+    public CatalogueController(BookishDbContext context)
+    {
+        _context = context;
+    }
+
     // GET: /Catalogue/
     //same as GET: /Catalogue/BookList/
-    public IActionResult BookList()
+    public async Task<IActionResult> BookList()
     {
-        return View();
+        var books = await _context.Books.ToListAsync();
+
+        return View(books);
     }
-    // 
+
     // GET: /Catalogue/BookDetails/{id}?book=title/ 
-    public IActionResult BookDetails(int id = 1, string book = "True and Me")
+    public async Task<IActionResult> BookDetails(int? id = 1)
     {
-        // return HtmlEncoder.Default.Encode($"Show the details for the book {book} of id {id}");
 
-        ViewData["id"] = "Id: " + id;
-        ViewData["book"] = "Title: " + book;
+        var book = _context.Books
+            .FirstOrDefault(b => b.BookId == id);
 
-        return View();
+        if (book == null)
+        {
+            return NotFound();
+        }
+
+        return View(book);
     }
 
 }
