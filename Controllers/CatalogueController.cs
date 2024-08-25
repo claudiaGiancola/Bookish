@@ -21,7 +21,9 @@ public class CatalogueController : Controller
     //same as GET: /Catalogue/BookList/
     public async Task<IActionResult> BookList()
     {
-        var books = await _context.Books.ToListAsync();
+        var books = await _context.Books
+            .Include(x=>x.Author)
+            .ToListAsync();
 
         return View(books);
     }
@@ -31,6 +33,7 @@ public class CatalogueController : Controller
     {
 
         var book = _context.Books
+            .Include(x=>x.Author)
             .FirstOrDefault(b => b.BookId == id);
 
         if (book == null)
