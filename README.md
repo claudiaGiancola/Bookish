@@ -7,11 +7,11 @@ Building a simple library-management system by designing, querying, and interfac
 - Install PostgreSQL and pgAdmin
 
 - Install Entity Framework Core:
-  > `dotnet add package Microsoft.EntityFrameworkCore`
-  > `dotnet add package Microsoft.EntityFrameworkCore.Design`
-  > `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL`
-  > `dotnet add package Microsoft.EntityFrameworkCore.Tools` (to use EF Core Migrations API)
-  > `dotnet add package Microsoft.EntityFrameworkCore.Relational`
+  - `dotnet add package Microsoft.EntityFrameworkCore`
+  * `dotnet add package Microsoft.EntityFrameworkCore.Design`
+    - `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL`
+    - `dotnet add package Microsoft.EntityFrameworkCore.Tools` (to use EF Core Migrations API)
+    * `dotnet add package Microsoft.EntityFrameworkCore.Relational`
   
 - Run `dotnet tool install --global dotnet-ef` to allow you to run dotnet entity framework commands in your terminal
 
